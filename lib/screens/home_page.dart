@@ -429,8 +429,82 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(chat["name"]), backgroundColor: Colors.pink),
-      body: Center(child: Text("Đang trò chuyện với ${chat["name"]}")),
+      appBar: AppBar(
+        title: Text(chat["name"]),
+        backgroundColor: Colors.pink,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.task_alt),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text("Nhiệm vụ của bạn và ${chat["name"]}"),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                          leading: Icon(Icons.message),
+                          title: Text(
+                              "1. Nhắn tin với nhau 10 lần để mở khóa tính năng 'Voice'")),
+                      ListTile(
+                          leading: Icon(Icons.timer),
+                          title: Text(
+                              "2. Duy trì đoạn chat này 30p để mở khóa tính năng 'Call'")),
+                      ListTile(
+                          leading: Icon(Icons.image),
+                          title: Text(
+                              "3. Duy trì nhắn tin trong 7 ngày để mở khóa tính năng 'Ảnh'")),
+                      ListTile(
+                          leading: Icon(Icons.video_call),
+                          title: Text(
+                              "4. Duy trì nhắn tin trong 14 ngày để mở khóa tính năng 'Call Video'")),
+                    ],
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text("Đóng"),
+                    )
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(child: Text("Đang trò chuyện với ${chat["name"]}")),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Nhập tin nhắn...",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10),
+                IconButton(
+                  icon: Icon(Icons.send, color: Colors.pink),
+                  onPressed: () {
+                    // Xử lý gửi tin nhắn
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
