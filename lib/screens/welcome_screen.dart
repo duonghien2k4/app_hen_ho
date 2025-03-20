@@ -6,21 +6,21 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade100,
+      backgroundColor: Colors.pink.shade100,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Logo App
             Image.asset(
-              'assets/logo.png', // Thay bằng logo của bạn
+              'assets/logo.png', // Thay bằng logo
               height: 120,
             ),
             const SizedBox(height: 30),
             // Nút Đăng nhập
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.pink,
                 foregroundColor: Colors.white,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
@@ -38,10 +38,10 @@ class WelcomeScreen extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
-                foregroundColor: Colors.orange,
+                foregroundColor: Colors.pink,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                side: const BorderSide(color: Colors.orange, width: 2),
+                side: const BorderSide(color: Colors.pink, width: 2),
               ),
               onPressed: () {
                 Navigator.push(

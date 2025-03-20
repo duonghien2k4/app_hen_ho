@@ -6,7 +6,7 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Đăng ký"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.pink,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -17,6 +17,7 @@ class RegisterScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Tên",
                 border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.person),
               ),
             ),
             const SizedBox(height: 15),
@@ -24,6 +25,7 @@ class RegisterScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Gmail",
                 border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.mail),
               ),
             ),
             const SizedBox(height: 15),
@@ -32,12 +34,13 @@ class RegisterScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Mật khẩu",
                 border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.password),
               ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.pink,
                 foregroundColor: Colors.white,
               ),
               onPressed: () {},
